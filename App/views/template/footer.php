@@ -1,7 +1,7 @@
 
     </body>
-    <footer class="footer">
-        <div class="sub"> <p> Suhrob Saidov </p>    </div>
+    <footer class="footer" >
+        <div class="sub">  Done by Suhrob Saidov     </div>
 
     </footer>
 </html>

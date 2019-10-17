@@ -1,5 +1,5 @@
 
-<div>
- Это платформа построена для выполнненя разных математических вычаслений как и в положительную так и в отрицательную сторону
-    <a href="/Calculate">Начать</a>
+<div class="speach">
+ This platform is done to solve hard math expressions to any dymantions
+    <a href="/Calculate">Start a test</a>
 </div>

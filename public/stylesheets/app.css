@@ -2,9 +2,19 @@
     text-align: center;
 }
 .footer {
-    text-align: center;
-    color: cadetblue;
+    display: inline-block;
+    margin-top: 25em;
+    margin-left: 44%;
 }
 .sub {
+
+    margin-top: 0em;
+    margin-left: 0%;
+    display: inline;
     text-space: 1px;
+}
+.speach{
+    display: inline-block;
+    margin-top: 5em;
+    margin-left: 28%;
 }

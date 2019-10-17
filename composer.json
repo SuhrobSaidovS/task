@@ -1,0 +1,19 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "App/Core/App.php",
+            "App/Controllers/Main.php",
+            "App/Core/Classes/Controller.php",
+            "App/Controllers/Calculate.php",
+            "App/Models/Save.php",
+            "App/Core/Classes/FileDb.php"
+
+        ]
+    },
+    "name": "suhrob/calculation",
+    "description": "calculation of numbers",
+    "require": {}
+}

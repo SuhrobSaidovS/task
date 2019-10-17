@@ -14,7 +14,6 @@ abstract class Controller {
     function __construct () {
 
         $this->route = explode('/', URI);
-
         $this->args = count($this->route);
 
         $this->router();
@@ -24,8 +23,8 @@ abstract class Controller {
     private function router () {
         $route = ucwords($this->route[1]);
         if (class_exists("App\Controllers\\$route")) {
-
             if ($this->args >= 3) {
+
                 if (method_exists($this, $this->route[2])) {
                     $this->uriCaller(2, 3);
                 } else {
@@ -52,11 +51,9 @@ abstract class Controller {
     }
 
     private function uriCaller ($method, $param) {
-
         for ($i = $param; $i < $this->args; $i++) {
             $this->params[$i] = $this->route[$i];
         }
-
         if ($method == 0)
             call_user_func_array(array($this, 'Index'), $this->params);
         else

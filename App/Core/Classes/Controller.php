@@ -1,4 +1,7 @@
 <?php
+namespace App\Core\Classes;
+
+use App\Controllers\Calculate;
 
 abstract class Controller {
 
@@ -19,8 +22,8 @@ abstract class Controller {
     }
 
     private function router () {
-
-        if (class_exists($this->route[1])) {
+        $route = ucwords($this->route[1]);
+        if (class_exists("App\Controllers\\$route")) {
 
             if ($this->args >= 3) {
                 if (method_exists($this, $this->route[2])) {
@@ -65,14 +68,10 @@ abstract class Controller {
 
     function model ($path) {
 
-        $path = $path;
-
         $class = explode('/', $path);
         $class = $class[count($class)-1];
 
-        $path = strtolower($path);
-
-        require(ROOT . '/app/models/' . $path . '.php');
+        require(ROOT . '/App/models/' . $path . '.php');
 
         $this->$class = new $class;
 
@@ -83,7 +82,7 @@ abstract class Controller {
         if (is_array($data))
             extract($data);
 
-        require(ROOT . '/app/views/' . $path . '.php');
+        require(ROOT . '/App/views/' . $path . '.php');
 
     }
 

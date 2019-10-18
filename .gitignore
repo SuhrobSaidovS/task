@@ -1,2 +1,4 @@
 /vendor/
 /public/data
+.vagrant
+.idea

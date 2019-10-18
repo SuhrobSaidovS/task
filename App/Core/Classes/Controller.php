@@ -1,8 +1,6 @@
 <?php
 namespace App\Core\Classes;
 
-use App\Controllers\Calculate;
-
 abstract class Controller {
 
     private $route = [];
@@ -62,17 +60,6 @@ abstract class Controller {
     }
 
     abstract function Index ();
-
-    function model ($path) {
-
-        $class = explode('/', $path);
-        $class = $class[count($class)-1];
-
-        require(ROOT . '/App/models/' . $path . '.php');
-
-        $this->$class = new $class;
-
-    }
 
     function view ($path, $data = []) {
 

@@ -21,9 +21,6 @@ class Calculate extends Controller {
         
     }
 
-    /*
-     * http://localhost/calculate/proccess/[$parameter]
-     */
     function procces ($parameter = '') {
         $this->view('template/header');
 
@@ -34,7 +31,6 @@ class Calculate extends Controller {
             $file = file($_FILES['fupload']['tmp_name']);
             $operation = $_POST['type'];
             $c = count($file);
-            $array = [];
             for($i = 0; $i < $c; $i++)
             {
                 $line = explode(' ', $file[$i]);
@@ -45,8 +41,7 @@ class Calculate extends Controller {
             $save = new Save();
             $save->apply($this->result);
             $this->view('calculation/success', [
-                "links" => $save->links,
-                "result" => $this->result
+                "links" => $save->links
             ]);
         }
         $this->view('calculation/index');
